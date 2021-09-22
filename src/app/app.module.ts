@@ -10,6 +10,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { TestDirDirective } from './testDirective/test-dir.directive';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ShoppingListComponent,
     ShoppingEditComponent,
     TestDirDirective,
+    DropdownDirective,
 
   ],
   imports: [
