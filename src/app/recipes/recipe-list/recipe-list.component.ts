@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Ingredient } from 'src/app/shared/ingredient.model';
 import { Recipe } from '../recipe.model';
 import { RecipiesService } from '../recipies.service';
 
@@ -12,12 +13,22 @@ export class RecipeListComponent implements OnInit {
     new Recipe(
       'Test',
       'This is a test',
-      'https://cdn.pixabay.com/photo/2015/04/29/19/33/cookbook-746005_960_720.jpg'
+      'https://cdn.pixabay.com/photo/2015/04/29/19/33/cookbook-746005_960_720.jpg',
+      [
+        new Ingredient('food', 3),
+        new Ingredient('food', 3),
+        new Ingredient('food', 3),
+      ]
     ),
     new Recipe(
       'Test',
       'This is a test',
-      'https://cdn.pixabay.com/photo/2015/04/29/19/33/cookbook-746005_960_720.jpg'
+      'https://cdn.pixabay.com/photo/2015/04/29/19/33/cookbook-746005_960_720.jpg',
+      [
+        new Ingredient('food', 3),
+        new Ingredient('food', 3),
+        new Ingredient('food', 3),
+      ]
     ),
   ];
 
