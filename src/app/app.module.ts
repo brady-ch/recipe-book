@@ -11,6 +11,7 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { TestDirDirective } from './testDirective/test-dir.directive';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 @NgModule({
   declarations: [
@@ -24,14 +25,9 @@ import { DropdownDirective } from './shared/dropdown.directive';
     ShoppingEditComponent,
     TestDirDirective,
     DropdownDirective,
-
   ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, ReactiveFormsModule],
+  providers: [ShoppingListService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
