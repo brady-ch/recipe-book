@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Ingredient } from 'src/app/shared/ingredient.model';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { Recipe } from '../recipe.model';
 import { RecipiesService } from '../recipies.service';
 
@@ -9,32 +10,19 @@ import { RecipiesService } from '../recipies.service';
   styleUrls: ['./recipe-list.component.css'],
 })
 export class RecipeListComponent implements OnInit {
-  recipes: Recipe[] = [
-    new Recipe(
-      'Test',
-      'This is a test',
-      'https://cdn.pixabay.com/photo/2015/04/29/19/33/cookbook-746005_960_720.jpg',
-      [
-        new Ingredient('food', 3),
-        new Ingredient('food', 3),
-        new Ingredient('food', 3),
-      ]
-    ),
-    new Recipe(
-      'Test',
-      'This is a test',
-      'https://cdn.pixabay.com/photo/2015/04/29/19/33/cookbook-746005_960_720.jpg',
-      [
-        new Ingredient('food', 3),
-        new Ingredient('food', 3),
-        new Ingredient('food', 3),
-      ]
-    ),
-  ];
+  recipes: Recipe[] = [];
 
-  constructor(private recipeService: RecipiesService) {}
+  constructor(
+    private recipeService: RecipiesService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.recipes = this.recipeService.getRecipes();
+  }
+
+  onNewRecipe() {
+    this.router.navigate(['new']);
   }
 }
